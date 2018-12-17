@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>New</title>
+    <link rel="stylesheet" th:href="@{/main.css}">
+    <nav th:fragment="navigation">
+        <ul>
+            <li><a th:href="@{~/index}">Home</a> </li>
+            <li><a th:href="@{~/new}">new product</a> </li>
+        </ul>
+    </nav>
+</head>
+<body>
+
+<h1>New Product</h1>
+
+<br>
+<br>
+<form method="post" th:action="@{~/new}" th:object="${newKoopje}">
+    <input type="hidden" th:field="*{id}"/>
+    <label>Naam</label>
+    <input type="text" th:field="*{naam}">
+    <span th:if="${#fields.hasErrors('naam')}" th:errors="*{naam}" th:class="error"></span>
+    <br>
+    <label>Prijs</label>
+    <input type="text" th:field="*{vraagPrijs}">
+    <span th:if="${#fields.hasErrors('vraagPrijs')}" th:errors="*{vraagPrijs}" th:class="error"></span>
+    <br>
+    <label>Email</label>
+    <input type="text" th:field="*{email}">
+    <span th:if="${#fields.hasErrors('email')}" th:errors="*{email}" th:class="error"></span>
+    <br>
+    <label>Gebruikersnaam</label>
+    <input type="text" th:field="*{username}">
+    <span th:if="${#fields.hasErrors('username')}" th:errors="*{username}" th:class="error"></span>
+    <br>
+    <label>Omschrijving</label>
+    <textarea th:field="*{omschrijving}"></textarea>
+    <span th:if="${#fields.hasErrors('omschrijving')}" th:errors="*{omschrijving}" th:class="error"></span>
+    <br>
+    <br>
+    <br>
+    <br>
+
+    <input type="submit">
+</form>
+
+</body>
+</html>

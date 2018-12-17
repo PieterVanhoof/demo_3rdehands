@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" th:href="@{/main.css}">
+</head>
+<nav th:fragment="navigation">
+    <ul>
+        <li><a th:href="@{~/index}">Home</a> </li>
+        <li><a th:href="@{~/new}">new product</a> </li>
+    </ul>
+</nav>
+<body>
+
+<table>
+    <thead>
+    <tr>
+        <th>naam</th>
+        <th>VraagPrijs</th>
+        <th>Omschrijving</th>
+    </tr>
+    </thead>
+    <div id="content" class="container">
+    <tbody>
+    <tr th:object="${artikel} ">
+        <td th:text="*{id}"></td>
+        <td th:text="${artikel.naam}"></td>
+        <td th:text="${artikel.vraagPrijs}"></td>
+        <td th:text="${artikel.username}"> </td>
+        <td th:text="${artikel.omschrijving}"></td>
+
+
+    </tr>
+    </tbody>
+    </div>
+</table>
+
+</body>
+</html>

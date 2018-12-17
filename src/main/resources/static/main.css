@@ -1,0 +1,32 @@
+label{
+    padding-right: 30px;
+}
+nav{
+    height: 60px;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    z-index: 100000000000000;
+    background-color: #38b3ff;
+    background: linear-gradient(#36ffb7,#94ff99);
+    
+}
+nav ul{
+    list-style: none;
+
+}
+nav ul li{
+    display: inline-block;
+}
+nav ul li a{
+    text-decoration: none;
+    font-family: 'DejaVu Sans Mono',monospace;
+}
+nav ul li a:hover{
+    color: white;
+}
+#content{
+    padding-top: 70px;
+}
+body{padding-top: 70px}

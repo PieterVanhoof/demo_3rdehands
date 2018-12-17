@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" th:href="@{/main.css}">
+</head>
+<body>
+<nav th:fragment="navigation">
+    <ul>
+        <li><a th:href="@{~/index}">Home</a> </li>
+        <li><a th:href="@{~/new}">new product</a> </li>
+    </ul>
+</nav>
+<table>
+    <thead>
+    <tr>
+        <th>naam</th>
+        <th>vraagPrijs</th>
+        <th>details</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    <tr th:each="Koopje :${all}">
+        <td th:text="${Koopje.naam}"></td>
+        <td th:text="${Koopje.vraagPrijs}"></td>
+        <td><a class="btn" th:href="@{/details/{id}(id = ${Koopje.id})}">Details</a></td>
+    </tr>
+    </tbody>
+</table>
+
+</body>
+</html>
